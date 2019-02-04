@@ -1,6 +1,6 @@
 # angular-todd-course
 
-Curso de angular - do basico ao avançado.
+Curso de angular: do basico ao avançado.
 
 ### branch: configuracao-projeto
 - Deixei o projeto na forma mais minimalista possivel utilizando o cli
@@ -10,3 +10,9 @@ Curso de angular - do basico ao avançado.
 - Os arquivos index.html, main.js e angular.json foram alterados
 - Os dados do componente app tambem foram modificados
 
+
+### branch: 1-interpolation-and-expressions
+- podemos usar ternario
+- podemos concatenar
+- podemos realizar operacoes matematicas 
+- tudo acima dentro de uma interpolacao
