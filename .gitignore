@@ -1,3 +1,4 @@
 node_modules
 .idea/*
 git statu
+#package-lock.json
