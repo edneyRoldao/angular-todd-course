@@ -16,3 +16,8 @@ Curso de angular: do basico ao avançado.
 - podemos concatenar
 - podemos realizar operacoes matematicas 
 - tudo acima dentro de uma interpolacao
+
+
+### branch: 2-property-binding
+- podemos atribuir o valor de uma variavel a uma propriedade de uma tab HTML
+- foi realizado um ajuste no arquivo angular.json para apontar qual diretorio vamos colocar conteudos estaticos.

@@ -8,31 +8,22 @@ import { Component } from '@angular/core';
     <div class="container" style="margin-top: 10px">
       <div class="jumbotron">
         
-        {{ title }}
+        <h1> {{ app }} </h1>
         
-        <div>
-          {{ numberOne + numberTwo }}
-        </div>
-        
-        <div>
-          {{ isHappy ? ':)' : ':(' }}
-        </div>
-        
-        <div>
-          {{ 'Welcome to ' + app }}
-        </div>
+        <!-- property binding -->
+        <h1 [innerHTML]="app"></h1>
+        <img [src]="resident">
+        <br>
+        <input class="form-control" type="text" [value]="app">
         
       </div>
     </div>
   `
 })
 export class AppComponent {
-
+  resident = 'assets/img/imagem.jpeg';
   app = 'angular study';
   title: string;
-  numberOne = 1;
-  numberTwo = 2;
-  isHappy = true;
 
   constructor() {
     this.title = 'interpolation and expressions samples';
