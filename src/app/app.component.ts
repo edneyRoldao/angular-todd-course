@@ -8,19 +8,20 @@ import {log} from 'util';
   template: `
     <div class="container" style="margin-top: 10px">
       <div class="jumbotron">
-        <h1> {{ app }} </h1>
         
+        NgModel Sem TWD: - 
         <input class="form-control" 
-               type="text"
-               [value]="name"
-               (input)="inputHandler($event)"
-               (blur)="handleBlur($event)">
+               type="text" [ngModel]="name1">
+        <hr>
+
+        NgModel Com TWD: -
+        <input class="form-control"
+               type="text" [(ngModel)]="name2">
         
         <hr>
-        <div class="btn btn-info" (click)="handleClick()">Test EventBinding</div>
         
-        <hr>
-        {{ name }}
+        {{ 'sem TWD: ' + name1 }} <br>
+        {{ 'com TWD: ' + name2 }}
         
       </div>
     </div>
@@ -28,23 +29,10 @@ import {log} from 'util';
 })
 export class AppComponent {
 
-  name = 'edney';
-  app = 'angular study';
+  name1 = 'edney';
+  name2 = 'edney';
 
   constructor() {
-  }
-
-  handleBlur(event: any) {
-    this.name = event.target.value;
-    console.log(event);
-  }
-
-  inputHandler(event: any) {
-    this.name = event.target.value;
-  }
-
-  handleClick() {
-    this.name = 'edney roldao';
   }
 
 }

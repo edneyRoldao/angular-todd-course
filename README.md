@@ -28,3 +28,9 @@ Curso de angular: do basico ao avançado.
 - quando passamos o event para a function citada acima, podemos acessar seu valor com o caminho: event.target.value
 - podemos utilizar event binding para atualizar um valor de input, como o attr name utilizado nesse exemplo
 - o evento input visto no exemplo, funciona como two way data binding.
+
+### branch: 4-two-way-databinding
+- e quando uma variavel pode ser alterada dos dois lados, usar com cautela pois diminui a performance.
+- e considerada o ponto negativo no angularJS
+- usamos twd localmente, comunicacao entre components vamos usar listeners.
+- nesse exemplo vamos utilizar formulario, portanto precisamos importar o modulo FormsModule no app.module.ts
