@@ -8,31 +8,30 @@ import {log} from 'util';
   template: `
     <div class="container" style="margin-top: 10px">
       <div class="jumbotron">
-        
-        NgModel Sem TWD: - 
-        <input class="form-control" 
-               type="text" [ngModel]="name1">
-        <hr>
 
-        NgModel Com TWD: -
-        <input class="form-control"
-               type="text" [(ngModel)]="name2">
+        <h1>Template Ref Variables</h1>
+        
+        <input class="form-control" type="text" #username>
+        
+        <div style="margin-top: 10px" class="btn btn-dark" (click)="clickHandler(username.value)">
+          Get Value
+        </div>
         
         <hr>
-        
-        {{ 'sem TWD: ' + name1 }} <br>
-        {{ 'com TWD: ' + name2 }}
+        {{ name }}
         
       </div>
     </div>
   `
 })
 export class AppComponent {
-
-  name1 = 'edney';
-  name2 = 'edney';
+  name: string;
 
   constructor() {
+  }
+
+  clickHandler(valor: string) {
+    this.name = valor;
   }
 
 }
