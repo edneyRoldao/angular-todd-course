@@ -21,3 +21,10 @@ Curso de angular: do basico ao avançado.
 ### branch: 2-property-binding
 - podemos atribuir o valor de uma variavel a uma propriedade de uma tab HTML
 - foi realizado um ajuste no arquivo angular.json para apontar qual diretorio vamos colocar conteudos estaticos.
+
+
+### branch: 3-event-binding
+- podemos ligar um evento de uma tag, como click em um function declarada no nosso ts.
+- quando passamos o event para a function citada acima, podemos acessar seu valor com o caminho: event.target.value
+- podemos utilizar event binding para atualizar um valor de input, como o attr name utilizado nesse exemplo
+- o evento input visto no exemplo, funciona como two way data binding.

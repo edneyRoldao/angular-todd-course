@@ -1,5 +1,6 @@
 
 import { Component } from '@angular/core';
+import {log} from 'util';
 
 @Component({
   selector: 'app-root',
@@ -7,26 +8,43 @@ import { Component } from '@angular/core';
   template: `
     <div class="container" style="margin-top: 10px">
       <div class="jumbotron">
-        
         <h1> {{ app }} </h1>
         
-        <!-- property binding -->
-        <h1 [innerHTML]="app"></h1>
-        <img [src]="resident">
-        <br>
-        <input class="form-control" type="text" [value]="app">
+        <input class="form-control" 
+               type="text"
+               [value]="name"
+               (input)="inputHandler($event)"
+               (blur)="handleBlur($event)">
+        
+        <hr>
+        <div class="btn btn-info" (click)="handleClick()">Test EventBinding</div>
+        
+        <hr>
+        {{ name }}
         
       </div>
     </div>
   `
 })
 export class AppComponent {
-  resident = 'assets/img/imagem.jpeg';
+
+  name = 'edney';
   app = 'angular study';
-  title: string;
 
   constructor() {
-    this.title = 'interpolation and expressions samples';
+  }
+
+  handleBlur(event: any) {
+    this.name = event.target.value;
+    console.log(event);
+  }
+
+  inputHandler(event: any) {
+    this.name = event.target.value;
+  }
+
+  handleClick() {
+    this.name = 'edney roldao';
   }
 
 }
