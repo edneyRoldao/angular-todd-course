@@ -63,3 +63,13 @@ Curso de angular: do basico ao avançado.
 ### branch: 9-ng-style
 - Vamos aprender a aplicar atributos css dinamicamente
 - vamos usar uma condicao ternaria para aplicar a cor de checked-in
+
+
+### branch: 10-pipes
+- Pipes transforma os valores vindos do nosso componente para serem exibidos na pagina, exemplo: toUpperCase
+- eles nao afetam o dado apenas para sua exibicao, nos bastidores tudo permanece a mesma coisa
+- e um mecanismo de transformacao de informacao somente para exibicao
+- podemos aplicar diversos pipes de uma so vez e o resultado de uma reflete na outra. Exemplo: imagine que temos um pipe
+  de upperCase e um que traduz de ingles para o portugues. Se o primeiro pipe a ser aplicado for o upperCase, entao o segundo que será o
+  de traducao, ele fará a traducao a partir do valor processado pelo upperCase, ou seja, vai traduzir a frase que esta com letras maiusculas
+- para os exemplos, iremos adicionar mais um campo no nosso modelo passenger.

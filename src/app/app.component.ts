@@ -9,42 +9,51 @@ import {Passenger} from './passenger.interface';
     <div class="container" style="margin-top: 10px; margin-bottom: 30px">
       <div class="jumbotron">
 
-        <h3 style="text-align: center">ngStyle and style bindings</h3>
+        <h3 style="text-align: center"> Pipes and data transformation </h3>
         
       </div>
     </div>
     
     <div class="container">
       <h5>Airline Passengers</h5>
-      
-      exemplo que aplica apenas um attr css
+
+      pipe de desenvolvimento (json)
       <ul>
-        <li *ngFor="let passenger of passengers; let i = index;">
-          <span class="status" 
-                [style.background]="(passenger.checkedIn ? '#2ecc71' : '#c0392b')"></span>
-          {{ i }}: {{ passenger.fullName }}
+        <!-- pipe para verificar a estrutura do objeto (pipe de desenvolvimento) -->
+        <li *ngFor="let passenger of passengers">
+          {{ passenger | json }}
+        </li>
+      </ul>
+      
+      <hr>
+
+      pipe que transforma datas
+      <ul>
+        <li *ngFor="let passenger of passengers">
+          {{ passenger.checkInDate | date: 'd / MMMM / y'  }}
+        </li>
+      </ul>
+      
+      <hr>
+
+      pipe que transforma datas com ternario
+      <ul>
+        <li *ngFor="let passenger of passengers">
+          {{ passenger.checkInDate ? (passenger.checkInDate | date: 'd / MMMM / y') : 'not checked in'  }}
         </li>
       </ul>
 
       <hr>
 
-      exemplo que aplica multi attrs css
+      Aplicando dois pipes (date e uppercase
       <ul>
-        <li *ngFor="let passenger of passengers; let i = index;">
-          <span class="status"
-                [ngStyle]="{
-                  background: (passenger.checkedIn ? '#2ecc71' : '#c0392b')
-                }"></span>
-          {{ i }}: {{ passenger.fullName }}
+        <li *ngFor="let passenger of passengers">
+          {{ passenger.checkInDate | date: 'd / MMMM / y' | uppercase }}
         </li>
       </ul>
-      
-      <hr>
-      <h6> when passenger is checkedIn <span class="status checked-in"></span></h6>
-      <h6> when passenger is not checkedIn <span class="status"></span></h6>
-      
+
+
     </div>
-    
   `
 })
 export class AppComponent {
@@ -53,27 +62,32 @@ export class AppComponent {
     {
       id: 1,
       fullName: 'edney',
-      checkedIn: true
+      checkedIn: true,
+      checkInDate: 1623514352345
     },
     {
       id: 2,
       fullName: 'giselle',
-      checkedIn: false
+      checkedIn: false,
+      checkInDate: null
     },
     {
       id: 3,
       fullName: 'marjorie',
-      checkedIn: true
+      checkedIn: true,
+      checkInDate: 1623514352345
     },
     {
       id: 4,
       fullName: 'nadine',
-      checkedIn: false
+      checkedIn: false,
+      checkInDate: null
     },
     {
       id: 5,
       fullName: 'draco',
-      checkedIn: false
+      checkedIn: false,
+      checkInDate: null
     }
   ];
 
