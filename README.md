@@ -76,3 +76,7 @@ Curso de angular: do basico ao avançado.
 - podemos criar nossos proprios pipes, so que nao sera oberdado aqui
 - lista de pipes disponiveis: https://angular.io/guide/pipes#built-in-pipes
 
+
+### branch: 11-safe-navigation
+- Para os exemplos vamos adicionar mais um modelo Child e o attr children em passenger
+- Utilizamos safe navigation para evitar receber um 'cannot read property length of null'
