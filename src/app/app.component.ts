@@ -9,16 +9,22 @@ import {log} from 'util';
     <div class="container" style="margin-top: 10px">
       <div class="jumbotron">
 
-        <h1>Template Ref Variables</h1>
+        <h1>ng-if and ng-template</h1>
         
-        <input class="form-control" type="text" #username>
+        <input class="form-control" type="text" (input)="changeHandler($event.target.value)">
+        <hr>
         
-        <div style="margin-top: 10px" class="btn btn-dark" (click)="clickHandler(username.value)">
-          Get Value
+        <!-- exemplo com sugar syntax -->
+        <div *ngIf="name.length">
+          searching for... {{ name }}
         </div>
         
-        <hr>
-        {{ name }}
+        <!-- forma mais verbosa do ngIf (em alguns casos o ngIf funcionará melhor assim -->
+        <ng-template [ngIf]="name.length">
+          <div>
+            searching for... {{ name }}
+          </div>
+        </ng-template>
         
       </div>
     </div>
@@ -30,7 +36,7 @@ export class AppComponent {
   constructor() {
   }
 
-  clickHandler(valor: string) {
+  changeHandler(valor: string) {
     this.name = valor;
   }
 

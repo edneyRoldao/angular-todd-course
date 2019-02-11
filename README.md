@@ -39,3 +39,10 @@ Curso de angular: do basico ao avançado.
 
 ### branch: 5-template-ref-variables
 - podemos criar variaveis dentro do proprio html para ser utilizado como parametro de alguma function em eventBinding da vida.
+
+
+### branch: 6-ng-if
+- ng-if e uma diretiva estrutural (que adiciona elementos html na pagina
+- ngIf adiciona e remove e/ou elementos da DOM 
+- Temos dois exemplos: a verboso e o sugar syntax
+
