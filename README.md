@@ -54,9 +54,12 @@ Curso de angular: do basico ao avançado.
 - temos exemplo de como acessar o index do array no html
 
 
-
 ### branch: 8-ng-class
 - Vamos aprender a aplicar classes css de forma dinamica
 - temos exemplo que adiciona uma classe dinamicamente
 - temos exemplo que adiciona multiplas classes dinamicamente
 
+
+### branch: 9-ng-style
+- Vamos aprender a aplicar atributos css dinamicamente
+- vamos usar uma condicao ternaria para aplicar a cor de checked-in

@@ -9,40 +9,36 @@ import {Passenger} from './passenger.interface';
     <div class="container" style="margin-top: 10px; margin-bottom: 30px">
       <div class="jumbotron">
 
-        <h3 style="text-align: center">ngClass and className bindings</h3>
+        <h3 style="text-align: center">ngStyle and style bindings</h3>
         
       </div>
     </div>
     
     <div class="container">
       <h5>Airline Passengers</h5>
-
-      exemplo que add apenas uma classe css dinamicamente
+      
+      exemplo que aplica apenas um attr css
       <ul>
         <li *ngFor="let passenger of passengers; let i = index;">
-          <span class="status" [class.checked-in]="passenger.checkedIn"></span>
+          <span class="status" 
+                [style.background]="(passenger.checkedIn ? '#2ecc71' : '#c0392b')"></span>
           {{ i }}: {{ passenger.fullName }}
         </li>
       </ul>
 
       <hr>
 
-      Nesse exemplo podemos adicionar multiplas classes css dinamicamente
+      exemplo que aplica multi attrs css
       <ul>
         <li *ngFor="let passenger of passengers; let i = index;">
-          
-          <span [ngClass]="{
-            'status': true,
-            'checked-in': passenger.checkedIn 
-          }"></span>
-          
+          <span class="status"
+                [ngStyle]="{
+                  background: (passenger.checkedIn ? '#2ecc71' : '#c0392b')
+                }"></span>
           {{ i }}: {{ passenger.fullName }}
-          
         </li>
       </ul>
-
-
-
+      
       <hr>
       <h6> when passenger is checkedIn <span class="status checked-in"></span></h6>
       <h6> when passenger is not checkedIn <span class="status"></span></h6>
