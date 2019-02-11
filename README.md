@@ -72,4 +72,7 @@ Curso de angular: do basico ao avançado.
 - podemos aplicar diversos pipes de uma so vez e o resultado de uma reflete na outra. Exemplo: imagine que temos um pipe
   de upperCase e um que traduz de ingles para o portugues. Se o primeiro pipe a ser aplicado for o upperCase, entao o segundo que será o
   de traducao, ele fará a traducao a partir do valor processado pelo upperCase, ou seja, vai traduzir a frase que esta com letras maiusculas
-- para os exemplos, iremos adicionar mais um campo no nosso modelo passenger.
+- para os exemplos, iremos adicionar mais um campo no nosso modelo passenger
+- podemos criar nossos proprios pipes, so que nao sera oberdado aqui
+- lista de pipes disponiveis: https://angular.io/guide/pipes#built-in-pipes
+
