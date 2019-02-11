@@ -1,44 +1,81 @@
 
 import { Component } from '@angular/core';
-import {log} from 'util';
+import {Passenger} from './passenger.interface';
 
 @Component({
   selector: 'app-root',
   styleUrls: ['./app.component.css'],
   template: `
-    <div class="container" style="margin-top: 10px">
+    <div class="container" style="margin-top: 10px; margin-bottom: 30px">
       <div class="jumbotron">
 
-        <h1>ng-if and ng-template</h1>
-        
-        <input class="form-control" type="text" (input)="changeHandler($event.target.value)">
-        <hr>
-        
-        <!-- exemplo com sugar syntax -->
-        <div *ngIf="name.length">
-          searching for... {{ name }}
-        </div>
-        
-        <!-- forma mais verbosa do ngIf (em alguns casos o ngIf funcionará melhor assim -->
-        <ng-template [ngIf]="name.length">
-          <div>
-            searching for... {{ name }}
-          </div>
-        </ng-template>
+        <h3>ng-for, iteranting collections and Interfaces to represent our models</h3>
         
       </div>
     </div>
+    
+    <div class="container">
+      <h5 style="text-align: center">Airline Passengers</h5>
+      <ul>
+    
+        <li *ngFor="let passenger of passengers">
+          {{ passenger.fullName }}
+        </li>
+
+        <hr>
+        
+        Acessando o index do array
+        <li *ngFor="let passenger of passengers; let i = index;">
+          {{ i }}: {{ passenger.fullName }}
+        </li>
+        
+        <hr>
+        
+        Sem sugar syntax
+        <ng-template ngFor let-passenger let-i="index" [ngForOf]="passengers">
+          <li>
+            {{ i }}: {{ passenger.fullName }}
+          </li>
+        </ng-template>
+        
+      </ul>
+    </div>
+    
   `
 })
 export class AppComponent {
-  name: string;
+
+  passengers: Passenger[] = [
+    {
+      id: 1,
+      fullName: 'edney',
+      checkedIn: true
+    },
+    {
+      id: 2,
+      fullName: 'giselle',
+      checkedIn: false
+    },
+    {
+      id: 3,
+      fullName: 'marjorie',
+      checkedIn: true
+    },
+    {
+      id: 4,
+      fullName: 'nadine',
+      checkedIn: false
+    },
+    {
+      id: 5,
+      fullName: 'draco',
+      checkedIn: false
+    }
+  ];
 
   constructor() {
   }
 
-  changeHandler(valor: string) {
-    this.name = valor;
-  }
 
 }
 

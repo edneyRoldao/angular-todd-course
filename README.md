@@ -46,3 +46,9 @@ Curso de angular: do basico ao avançado.
 - ngIf adiciona e remove e/ou elementos da DOM 
 - Temos dois exemplos: a verboso e o sugar syntax
 
+
+### branch: 7-ng-for
+- ng-for prove uma forma de iterar as nossas collections na pagina
+- da mesmo forma que o ngIf, ele tbm tem sugar syntax por meio da *
+- nesses exemplos vamos aprender a trabalhar com interfaces para descrever nossos modulos (objetos)
+- temos exemplo de como acessar o index do array no html
