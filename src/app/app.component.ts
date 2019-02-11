@@ -9,36 +9,44 @@ import {Passenger} from './passenger.interface';
     <div class="container" style="margin-top: 10px; margin-bottom: 30px">
       <div class="jumbotron">
 
-        <h3>ng-for, iteranting collections and Interfaces to represent our models</h3>
+        <h3 style="text-align: center">ngClass and className bindings</h3>
         
       </div>
     </div>
     
     <div class="container">
-      <h5 style="text-align: center">Airline Passengers</h5>
-      <ul>
-    
-        <li *ngFor="let passenger of passengers">
-          {{ passenger.fullName }}
-        </li>
+      <h5>Airline Passengers</h5>
 
-        <hr>
-        
-        Acessando o index do array
+      exemplo que add apenas uma classe css dinamicamente
+      <ul>
         <li *ngFor="let passenger of passengers; let i = index;">
+          <span class="status" [class.checked-in]="passenger.checkedIn"></span>
           {{ i }}: {{ passenger.fullName }}
         </li>
-        
-        <hr>
-        
-        Sem sugar syntax
-        <ng-template ngFor let-passenger let-i="index" [ngForOf]="passengers">
-          <li>
-            {{ i }}: {{ passenger.fullName }}
-          </li>
-        </ng-template>
-        
       </ul>
+
+      <hr>
+
+      Nesse exemplo podemos adicionar multiplas classes css dinamicamente
+      <ul>
+        <li *ngFor="let passenger of passengers; let i = index;">
+          
+          <span [ngClass]="{
+            'status': true,
+            'checked-in': passenger.checkedIn 
+          }"></span>
+          
+          {{ i }}: {{ passenger.fullName }}
+          
+        </li>
+      </ul>
+
+
+
+      <hr>
+      <h6> when passenger is checkedIn <span class="status checked-in"></span></h6>
+      <h6> when passenger is not checkedIn <span class="status"></span></h6>
+      
     </div>
     
   `

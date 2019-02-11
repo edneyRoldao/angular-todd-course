@@ -52,3 +52,11 @@ Curso de angular: do basico ao avançado.
 - da mesmo forma que o ngIf, ele tbm tem sugar syntax por meio da *
 - nesses exemplos vamos aprender a trabalhar com interfaces para descrever nossos modulos (objetos)
 - temos exemplo de como acessar o index do array no html
+
+
+
+### branch: 8-ng-class
+- Vamos aprender a aplicar classes css de forma dinamica
+- temos exemplo que adiciona uma classe dinamicamente
+- temos exemplo que adiciona multiplas classes dinamicamente
+
