@@ -88,3 +88,15 @@ Curso de angular: do basico ao avançado.
 - Tambem conhecido como Container Component
 - Ele que vai renderizam os componentes filho
 - Estruturar o projeto com Container components e considerado uma boa pratica
+- Nos exemplos dessa branch teremos a criacao de um novo modulo e o seu Container Component
+- nosso modulo se chama passenger-dashboard
+  1 - criado o modulo do zero
+  2 - adicionado novo module no modulo principal da aplicacao no array de imports (app.module.ts
+  3 - adicionado pasta containers e o novo container component
+  4 - remover parte do html e ts do app.component para passenger-dashboard
+  5 - importar esse component no passenger-dashboard.module
+  6 - adicionar nova collection no moduleDecorator para exportar o component criado
+  7 - adicionar a tag criada no selector do component no html do nosso app.component
+  8 - movemos as interfaces para pasta models que e irma de containers
+  
+
