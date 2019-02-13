@@ -80,3 +80,11 @@ Curso de angular: do basico ao avançado.
 ### branch: 11-safe-navigation
 - Para os exemplos vamos adicionar mais um modelo Child e o attr children em passenger
 - Utilizamos safe navigation para evitar receber um 'cannot read property length of null'
+
+
+### branch: 12-smart-component-overview
+- Sao os componentes principais de cada modulo
+- E ele que possui os servicos e transmite-os para os outros componentes da arvore
+- Tambem conhecido como Container Component
+- Ele que vai renderizam os componentes filho
+- Estruturar o projeto com Container components e considerado uma boa pratica
