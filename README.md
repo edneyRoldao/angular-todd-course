@@ -79,7 +79,7 @@ Curso de angular: do basico ao avançado.
 
 ### branch: 11-safe-navigation
 - Para os exemplos vamos adicionar mais um modelo Child e o attr children em passenger
-- Utilizamos safe navigation para evitar receber um 'cannot read property length of null'
+- Utilizamos safe navigation para evitar receber um cannot read property length of null'
 
 
 ### branch: 12-smart-component-overview
@@ -131,3 +131,12 @@ Curso de angular: do basico ao avançado.
   7 - ver passenger-dashboard.component.ts, linha: 13
 - criamos uma funcao em count para exibir o total de passengers checkedIn (conhecimento js e ts em acao aqui)
   
+
+### branch: 16-ngFor-onChildComponent
+- Em se tratando de angular, essas e umas de mudancas mais impactantes, pois ao invés de iterar apenas objetos de uma lista,
+  vamos iterar tambem o componente, ou seja, para cada item da lista, sera criado dinamicamente seu componente de apresentacao
+- declaramos uma variavel para passar o passenger para o passengerDetailComponent usando @Input igual exemplo branch 15-...
+- ver tudo em PassengerDetailComponent
+- ver linhas: 16 e 17 do passenger-dashboard.component.ts
+- vamos remover o css do arquivo passenger-dashboard.component.css e colocar em styles.css para ficar 
+  disponivel em todo aplicacao, pois esta sendo usada em mais de um component

@@ -8,25 +8,14 @@ import { Passenger } from '../../models/passenger.interface';
     <div>
       <div class="container">
         <h5>Airline Passengers</h5>
-
-        <hr>
         
-        <!-- novos components -->
+        <hr>
         <app-passenger-count [passengersList]="passengers"></app-passenger-count>
-        <app-passenger-detail></app-passenger-detail>
         
         <hr>
+        <app-passenger-detail *ngFor="let passenger of passengers" [passengerDetail]="passenger">
+        </app-passenger-detail>
         
-        <ul>
-          <li *ngFor="let passenger of passengers; let i = index;">
-          <span class="status"
-                [ngStyle]="{
-                  background: (passenger.checkedIn ? '#2ecc71' : '#c0392b')
-                }"></span>
-            {{ i }}: {{ passenger.fullName }}
-          </li>
-        </ul>
-
         <hr>
         <h6> when passenger is checkedIn <span class="status checked-in"></span></h6>
         <h6> when passenger is not checkedIn <span class="status"></span></h6>

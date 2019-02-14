@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.status {
+  width: 10px;
+  height: 10px;
+  background: #c0392b;
+  display: block;
+  margin: 8px 10px 0 0;
+  float: left;
+  border-radius: 50%;
+}
+
+.status.checked-in {
+  background: #2ecc71;
+}
