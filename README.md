@@ -105,3 +105,15 @@ Curso de angular: do basico ao avançado.
 - e o local ideal buscar dados de um service que sao consumidos pela tela.  (listas, objetos)
 - precisamos implementar a funcao ngOnInit da interface OnInit
 - assim que o componente estiver pronto, o angular vai invocar a function
+
+
+### branch: 14-creating-children-components
+- Nessa branch vamos criar os outros components que faram parte do modulo passenger-dashboard onde ja foi criado o ContainerComponent
+- teremos mais dois components (passenger-count e passenger-details)
+- as pastas containers e models terao mais um irmao, components
+- lembrando que, os componentes filhos, serao stateless, ou seja, nao guardam estado
+- nossos novos components terao suas tags inseridas no html do passengerContainer
+- por fim, temos que adicionar os components criados no modulo - passenger module.
+- Veja que no decorator do modulo, adicionaremos os componentes apenas no array declarations, pois eles nao ficarao
+  acessiveis externamento. Lembrando que o ponto de entrada e o container, portanto, ele que deve estar no assay exports.
+  Obs: o o componente que vc estiver criando deve ser acessado externamente, tu deve colocar no array exports.

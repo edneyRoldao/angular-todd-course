@@ -9,6 +9,12 @@ import { Passenger } from '../../models/passenger.interface';
       <div class="container">
         <h5>Airline Passengers</h5>
 
+        <!-- novos components -->
+        <app-passenger-count></app-passenger-count>
+        <app-passenger-detail></app-passenger-detail>
+        
+        <hr>
+        
         <ul>
           <li *ngFor="let passenger of passengers; let i = index;">
           <span class="status"
