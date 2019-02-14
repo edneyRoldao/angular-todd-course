@@ -9,8 +9,10 @@ import { Passenger } from '../../models/passenger.interface';
       <div class="container">
         <h5>Airline Passengers</h5>
 
+        <hr>
+        
         <!-- novos components -->
-        <app-passenger-count></app-passenger-count>
+        <app-passenger-count [passengersList]="passengers"></app-passenger-count>
         <app-passenger-detail></app-passenger-detail>
         
         <hr>

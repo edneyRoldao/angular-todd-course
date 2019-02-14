@@ -9,7 +9,7 @@ import {Passenger} from './passenger-dashboard/models/passenger.interface';
     <div class="container" style="margin-top: 10px; margin-bottom: 30px">
       <div class="jumbotron">
 
-        <h3 style="text-align: center"> Creating children components  </h3>
+        <h3 style="text-align: center"> Passing data from a component to another with Input decorator ( @Input() ) </h3>
         
       </div>
     </div>

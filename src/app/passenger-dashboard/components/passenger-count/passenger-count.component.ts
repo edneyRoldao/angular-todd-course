@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {Passenger} from '../../models/passenger.interface';
 
 
 @Component({
@@ -6,12 +7,22 @@ import {Component} from '@angular/core';
   styleUrls: ['passenger-count.component.css'],
   template: `
     <div class="container">
-      Passenger count component is working...
+      Total Passengers: {{ passengersList?.length || 0 }} <br>
+      Total Passengers checked-in: {{ checkedInCount() }}
     </div> 
   `
 })
 export class PassengerCountComponent {
 
-  constructor() {}
+  @Input()
+  passengersList: Passenger[];
+
+  checkedInCount(): number {
+    if (!this.passengersList) {
+      return;
+    }
+
+    return this.passengersList.filter((p: Passenger) => p.checkedIn).length;
+  }
 
 }

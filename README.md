@@ -89,15 +89,15 @@ Curso de angular: do basico ao avançado.
 - Ele que vai renderizam os componentes filho
 - Estruturar o projeto com Container components e considerado uma boa pratica
 - Nos exemplos dessa branch teremos a criacao de um novo modulo e o seu Container Component
-- nosso modulo se chama passenger-dashboard
-  1 - criado o modulo do zero
-  2 - adicionado novo module no modulo principal da aplicacao no array de imports (app.module.ts
-  3 - adicionado pasta containers e o novo container component
-  4 - remover parte do html e ts do app.component para passenger-dashboard
-  5 - importar esse component no passenger-dashboard.module
-  6 - adicionar nova collection no moduleDecorator para exportar o component criado
-  7 - adicionar a tag criada no selector do component no html do nosso app.component
-  8 - movemos as interfaces para pasta models que e irma de containers
+- nosso modulo se chama passenger-dashboard <br>
+  1 - criado o modulo do zero <br>
+  2 - adicionado novo module no modulo principal da aplicacao no array de imports (app.module.ts <br>
+  3 - adicionado pasta containers e o novo container component <br>
+  4 - remover parte do html e ts do app.component para passenger-dashboard <br>
+  5 - importar esse component no passenger-dashboard.module <br>
+  6 - adicionar nova collection no moduleDecorator para exportar o component criado <br>
+  7 - adicionar a tag criada no selector do component no html do nosso app.component <br>
+  8 - movemos as interfaces para pasta models que e irma de containers <br>
   
 
 ### branch: 13-ngOnInit-lifecycle-hook
@@ -117,3 +117,17 @@ Curso de angular: do basico ao avançado.
 - Veja que no decorator do modulo, adicionaremos os componentes apenas no array declarations, pois eles nao ficarao
   acessiveis externamento. Lembrando que o ponto de entrada e o container, portanto, ele que deve estar no assay exports.
   Obs: o o componente que vc estiver criando deve ser acessado externamente, tu deve colocar no array exports.
+
+
+### branch: 15-passingData-intoComponents-with-inputAnnotation
+- Vamos aprender como transmitir uma objeto, lista, etc de um component para outro utilizando o @Input
+- para entender melhor como funciona esse decorator, vamos fazer um passa a passo <br>
+  1 - objetivo: queremos passar a lista que esta no passengerContainerComponent para o passengerCountComponent <br>
+  2 - precisamos declara uma variavel da lista no componente que vai receber, no caso: PassengerCountComponent <br>
+  3 - acima da variavel criada no passo anterior, adicionamos o decorator @Input() <br>
+  4 - depois do passo anterior, nossa variavel vai se comportar como um atrubuto da tag do componente no html. <br>
+  5 - vamos passar a lista de passengers para attr citado acima no processo de property binding. <br>
+  6 - ver passenger-count.component.ts, linhas: 10, 16 e 17 <br>
+  7 - ver passenger-dashboard.component.ts, linha: 13
+- criamos uma funcao em count para exibir o total de passengers checkedIn (conhecimento js e ts em acao aqui)
+  
