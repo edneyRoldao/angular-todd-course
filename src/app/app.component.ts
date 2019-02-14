@@ -9,7 +9,7 @@ import {Passenger} from './passenger-dashboard/models/passenger.interface';
     <div class="container" style="margin-top: 10px; margin-bottom: 30px">
       <div class="jumbotron">
 
-        <h3 style="text-align: center"> Creating a container (smart) component </h3>
+        <h3 style="text-align: center"> ngOnInit - ciclo de vida </h3>
         
       </div>
     </div>

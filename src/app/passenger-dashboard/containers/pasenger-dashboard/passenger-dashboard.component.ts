@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Passenger } from '../../models/passenger.interface';
 
 @Component({
@@ -27,50 +27,56 @@ import { Passenger } from '../../models/passenger.interface';
     </div>
   `
 })
-export class PassengerDashboardComponent {
+export class PassengerDashboardComponent implements OnInit {
+  passengers: Passenger[];
 
-  passengers: Passenger[] = [
-    {
-      id: 1,
-      fullName: 'edney',
-      checkedIn: true,
-      checkInDate: 1623514352345,
-      children: [
-        {name: 'marjorie', age: 3},
-        {name: 'nadine', age: 16}
-      ]
-    },
-    {
-      id: 2,
-      fullName: 'giselle',
-      checkedIn: false,
-      checkInDate: null,
-      children: [
-        {name: 'marjorie', age: 3},
-        {name: 'nadine', age: 16}
-      ]
-    },
-    {
-      id: 3,
-      fullName: 'marjorie',
-      checkedIn: true,
-      checkInDate: 1623514352345,
-      children: null
-    },
-    {
-      id: 4,
-      fullName: 'nadine',
-      checkedIn: false,
-      checkInDate: null,
-      children: null
-    },
-    {
-      id: 5,
-      fullName: 'draco',
-      checkedIn: false,
-      checkInDate: null,
-      children: null
-    }
-  ];
+  ngOnInit() {
+
+    console.log('ngOnInit is working properly');
+
+    this.passengers = [
+      {
+        id: 1,
+        fullName: 'edney',
+        checkedIn: true,
+        checkInDate: 1623514352345,
+        children: [
+          {name: 'marjorie', age: 3},
+          {name: 'nadine', age: 16}
+        ]
+      },
+      {
+        id: 2,
+        fullName: 'giselle',
+        checkedIn: false,
+        checkInDate: null,
+        children: [
+          {name: 'marjorie', age: 3},
+          {name: 'nadine', age: 16}
+        ]
+      },
+      {
+        id: 3,
+        fullName: 'marjorie',
+        checkedIn: true,
+        checkInDate: 1623514352345,
+        children: null
+      },
+      {
+        id: 4,
+        fullName: 'nadine',
+        checkedIn: false,
+        checkInDate: null,
+        children: null
+      },
+      {
+        id: 5,
+        fullName: 'draco',
+        checkedIn: false,
+        checkInDate: null,
+        children: null
+      }
+    ];
+  }
 
 }

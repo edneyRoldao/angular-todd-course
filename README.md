@@ -100,3 +100,8 @@ Curso de angular: do basico ao avançado.
   8 - movemos as interfaces para pasta models que e irma de containers
   
 
+### branch: 13-ngOnInit-lifecycle-hook
+- Uma function invocada pelo angular quando um component e inicializado
+- e o local ideal buscar dados de um service que sao consumidos pela tela.  (listas, objetos)
+- precisamos implementar a funcao ngOnInit da interface OnInit
+- assim que o componente estiver pronto, o angular vai invocar a function
