@@ -140,3 +140,7 @@ Curso de angular: do basico ao avançado.
 - ver linhas: 16 e 17 do passenger-dashboard.component.ts
 - vamos remover o css do arquivo passenger-dashboard.component.css e colocar em styles.css para ficar 
   disponivel em todo aplicacao, pois esta sendo usada em mais de um component
+
+
+### branch: 17-outputDecorator-and-eventEmitter
+- Utilizado para passar uma mudanca de um componente filho para frente
