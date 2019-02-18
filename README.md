@@ -147,3 +147,14 @@ Curso de angular: do basico ao avançado.
 - vamos inciar alterando o html do componente passenger-detail
 - veja que estamos usando o conceito de templateRef e eventBinding com input
 - vamos usar eventEmitter pra notificar o componente pai que algo mudou
+- vamos disparar um evento a partir do componente filho que vai afetar o componente ao qual ele esta sendo utilizado
+- Segue passo-a-passo para entendimento: <br>
+  - 1 - adicionamos um botao no html do component passenger-detail para remover um passenger
+  - 2 - adicionamos a funcao onRemove sem params ao evento de click (eventBinding)
+  - 3 - ver linhas 53 e 54 do component passenger-detail pois la temos o @Output e nosso eventEmitter
+  - 4 - no funcao criada no passo 2, vamos emitir o evento de remover. Linhas: 60 a 62
+  - 5 - no html do componente do container, pegamos o nome da variavel que recebeu o @Output do passo 3 e utilizamos ele como eventBinding.
+        linha: 19
+  - 6 - como o passo 5 foi a adicao do um eventBind, precisamo adicionar a funcao que vai receber esse evento. Ver funcao a partir da linha 82
+  - 7 - na funcao criada acima vamos remover o passenger utilizando o conceito de imutabilidade.
+- Em passenger container temos um exemplo de como fazer merge entre objetos. linha: 92
