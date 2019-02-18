@@ -9,7 +9,7 @@ import {Passenger} from './passenger-dashboard/models/passenger.interface';
     <div class="container" style="margin-top: 10px; margin-bottom: 30px">
       <div class="jumbotron">
 
-        <h3 style="text-align: center"> Iterating on a child component with ngFor and @Input decorator </h3>
+        <h3 style="text-align: center"> Emitting data from child component to another with @Output decorator and EventEmitter </h3>
         
       </div>
     </div>

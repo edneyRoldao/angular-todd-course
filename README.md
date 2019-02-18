@@ -144,3 +144,6 @@ Curso de angular: do basico ao avançado.
 
 ### branch: 17-outputDecorator-and-eventEmitter
 - Utilizado para passar uma mudanca de um componente filho para frente
+- vamos inciar alterando o html do componente passenger-detail
+- veja que estamos usando o conceito de templateRef e eventBinding com input
+- vamos usar eventEmitter pra notificar o componente pai que algo mudou
