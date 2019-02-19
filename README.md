@@ -175,3 +175,29 @@ Curso de angular: do basico ao avançado.
   - apos importar, ele deve ser adicionado em um novo array do decorator NgModule chamado providers. (ver no arquivo)
   - quando adicionamos um servico no array de providers, ele fica acessivel por todos os componentes que estao no array declarations
 - dentro do nosso smartComponent, podemos ver um exemplo da injecao de dependencia pelo angular
+
+
+### branch: 20-injectable-decorator
+- Vamos aprender a criar HTTP requests
+- Antes de usar o HttpClient, precisamos registrar o HttpClientModule dentro do passenger-dashboard.module e colocar no array imports do
+  decorator
+- Utilizaremos o @Injectable para que o nosso servico seja capaz de receber a injecao de outros servicos.
+  Sem esse decorator, nao conseguiremos usar o modulo HttpClient dentro do service em questao.
+- faca o teste: adicione o HttpClient no construtor e faca um console.log de mesmo com e sem o @Injectable.
+  Sem o decorator sera lancado um erro
+- e considerado boa pratica adicionar esse decorator com ou sem injecao de outros servicos
+- A partir de agora, vamos passar a utilizar um projeto backend que vai sumular os servicos Http que iremos consumir. Siga os passos abaixo:
+  - 1: baixe a API escrita em node aqui: https://github.com/edneyRoldao/angular-todd-api
+  - 2: npm install
+  - 3: node index.js
+  - 4: ver endpoints em controllers/passenger-dashboard.controller.js
+- todas os funcoes do httpClient retornam um observable e podemos usar sua estrutura de generics. Veja exemplo no servico criado.
+- Passo a passo:
+  - importar o HttpClientModule
+  - criar o service e adicionar o @Injectable() na classe
+  - reclarar o servico httpClient no construtor da classe.
+  - cria o recurso (no nosso caso foi um get de passengers) ' atencao com o generics da function e o retorno explicito na function '
+  - no smartComponent injetar o servico criado no construtor
+  - chamar o servico get criado como um subscriber dentro do ngOnInit.
+  - seja feliz
+
