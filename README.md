@@ -158,3 +158,12 @@ Curso de angular: do basico ao avançado.
   - 6 - como o passo 5 foi a adicao do um eventBind, precisamo adicionar a funcao que vai receber esse evento. Ver funcao a partir da linha 82
   - 7 - na funcao criada acima vamos remover o passenger utilizando o conceito de imutabilidade.
 - Em passenger container temos um exemplo de como fazer merge entre objetos. linha: 92
+
+
+### branch: 18-ngOnChanges-lifecycle
+- O ngChange pode ser util para manter o estado dos componentes local, sem refletir em outros componentes.
+- em outras palavras, podemos usar o onChanges para quebrar o binding entre child e parent
+- com o ngChange nos temos acesso ao valor atual e o anterior
+- ver passenger-detail component
+- ngChanges e invocado antes do ngInit
+- utilizar esse exemplo do ngChanges para explicar imutabilidade e a questao da referencia de um objeto.
