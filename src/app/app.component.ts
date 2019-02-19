@@ -1,6 +1,4 @@
-
 import { Component } from '@angular/core';
-import {Passenger} from './passenger-dashboard/models/passenger.interface';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +7,7 @@ import {Passenger} from './passenger-dashboard/models/passenger.interface';
     <div class="container" style="margin-top: 10px; margin-bottom: 30px">
       <div class="jumbotron">
 
-        <h3 style="text-align: center"> NgOnChanges lifecycle hook </h3>
+        <h3 style="text-align: center"> Data Services and Dependency Injection (synchronously) </h3>
         
       </div>
     </div>

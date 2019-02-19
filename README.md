@@ -167,3 +167,11 @@ Curso de angular: do basico ao avançado.
 - ver passenger-detail component
 - ngChanges e invocado antes do ngInit
 - utilizar esse exemplo do ngChanges para explicar imutabilidade e a questao da referencia de um objeto.
+
+
+### branch: 19-services-dependencyInjection
+- Primeiramente vamos criar a class de servico e retornar dados estaticos que estao no smartComponent (container)
+- criar o servico e registrar (importar) em passenger-dashboard.module.ts
+  - apos importar, ele deve ser adicionado em um novo array do decorator NgModule chamado providers. (ver no arquivo)
+  - quando adicionamos um servico no array de providers, ele fica acessivel por todos os componentes que estao no array declarations
+- dentro do nosso smartComponent, podemos ver um exemplo da injecao de dependencia pelo angular

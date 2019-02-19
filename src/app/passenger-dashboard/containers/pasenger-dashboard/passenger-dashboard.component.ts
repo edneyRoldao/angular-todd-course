@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Passenger } from '../../models/passenger.interface';
+
+import { PassengerDashboardService } from '../../services/passenger-dashboard.service';
 
 @Component({
   selector: 'app-passenger-dashboard',
@@ -11,11 +13,6 @@ import { Passenger } from '../../models/passenger.interface';
         
         <hr>
         <app-passenger-count [passengersList]="passengers"></app-passenger-count>
-        
-        <hr>
-        <div *ngFor="let passenger of passengers">
-          {{ passenger.fullName }}
-        </div>
         
         <hr>
         <app-passenger-detail *ngFor="let passenger of passengers" 
@@ -35,53 +32,13 @@ import { Passenger } from '../../models/passenger.interface';
 export class PassengerDashboardComponent implements OnInit {
   passengers: Passenger[];
 
+  // temos aqui a injecao do nosso servico pelo angular
+  // por baixo dos panos e criado uma variavel membro e por meio do this, ele recebe o servico injeto no construtor
+  constructor(private passengerService: PassengerDashboardService) {
+  }
+
   ngOnInit() {
-
-    console.log('ngOnInit is working properly');
-
-    this.passengers = [
-      {
-        id: 1,
-        fullName: 'edney',
-        checkedIn: true,
-        checkInDate: 1623514352345,
-        children: [
-          {name: 'marjorie', age: 3},
-          {name: 'nadine', age: 16}
-        ]
-      },
-      {
-        id: 2,
-        fullName: 'giselle',
-        checkedIn: false,
-        checkInDate: null,
-        children: [
-          {name: 'marjorie', age: 3},
-          {name: 'nadine', age: 16}
-        ]
-      },
-      {
-        id: 3,
-        fullName: 'marjorie',
-        checkedIn: true,
-        checkInDate: 1623514352345,
-        children: null
-      },
-      {
-        id: 4,
-        fullName: 'nadine',
-        checkedIn: false,
-        checkInDate: null,
-        children: null
-      },
-      {
-        id: 5,
-        fullName: 'draco',
-        checkedIn: false,
-        checkInDate: null,
-        children: null
-      }
-    ];
+    this.passengers = this.passengerService.getPassengers();
   }
 
   handleRemove(event: Passenger) {
