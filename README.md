@@ -200,4 +200,8 @@ Curso de angular: do basico ao avançado.
   - no smartComponent injetar o servico criado no construtor
   - chamar o servico get criado como um subscriber dentro do ngOnInit.
   - seja feliz
-
+  
+  
+### branch: 21-moreHttpRequests-with-immutableState
+- Nessa granch vamos criar mais servicos http utilizando todos os verbos
+- Se aprofundar em Object.assign
