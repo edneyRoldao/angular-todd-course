@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { Passenger } from '../models/passenger.interface';
@@ -21,8 +21,23 @@ export class PassengerDashboardService {
     return this.http.get<Passenger>(`${API_URL_BASE}/${passengerId}`);
   }
 
+  // Adicionando headers ao request
   updatePassenger(passenger: Passenger): Observable<Passenger> {
-    return this.http.put<Passenger>(`${API_URL_BASE}/${passenger.id}`, passenger);
+
+    const headers = new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Auth': 'abc123'
+    });
+
+    const params = new HttpParams()
+      .set('operacao', 'passenger-update')
+      .set('mais_queryString', 'test teste');
+
+    const httpOptions = {
+      headers, params
+    };
+
+    return this.http.put<Passenger>(`${API_URL_BASE}/${passenger.id}`, passenger, httpOptions);
   }
 
   deletePassenger(passengerId: number): Observable<Passenger> {

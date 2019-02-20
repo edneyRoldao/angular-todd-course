@@ -205,3 +205,9 @@ Curso de angular: do basico ao avançado.
 ### branch: 21-moreHttpRequests-with-immutableState
 - Nessa granch vamos criar mais servicos http utilizando todos os verbos
 - Se aprofundar em Object.assign
+
+  
+### branch: 22-customHeaders-and-RequestOptions
+- Vamos aprender a passar headers e queryString parametros
+- Nos exemplos faremos um refactoring no servico de updatePassenger
+
