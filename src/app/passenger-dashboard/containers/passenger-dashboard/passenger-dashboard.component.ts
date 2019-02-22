@@ -32,30 +32,14 @@ import { PassengerDashboardService } from '../../services/passenger-dashboard.se
 export class PassengerDashboardComponent implements OnInit {
   passengers: Passenger[];
 
-  constructor(private passengerService: PassengerDashboardService) {
-  }
+  constructor(private passengerService: PassengerDashboardService) {}
 
   ngOnInit() {
     this.passengerService.getPassengers().subscribe(
+      (data: Passenger[]) => this.passengers = data, // when success
 
-        // when success
-      (data: Passenger[]) => this.passengers = data,
-
-      // when error (olhar no console do browser)
-      (error) => console.log('LOG DO ERRO: ', error)
-
+      (error) => console.log('LOG DO ERRO: ', error) // when error (olhar no console do browser)
     );
-
-    this.passengerService.getPassengers2().subscribe(
-
-        // when success
-      (data: Passenger[]) => this.passengers = data,
-
-      // when error (olhar no console do browser)
-      (error) => console.log('LOG DO ERRO - ErrorHandling: ', error)
-
-    );
-
   }
 
   handleRemove(event: Passenger) {
@@ -78,12 +62,6 @@ export class PassengerDashboardComponent implements OnInit {
         return passenger;
       });
 
-    });
-  }
-
-  getPassenger(id: number) {
-    this.passengerService.getPassenger(id).subscribe((data: Passenger) => {
-      console.log(data);
     });
   }
 

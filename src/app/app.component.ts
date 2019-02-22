@@ -7,12 +7,14 @@ import { Component } from '@angular/core';
     <div class="container" style="margin-top: 10px; margin-bottom: 30px">
       <div class="jumbotron">
 
-        <h3 style="text-align: center"> Http Error Handling </h3>
+        <h3 style="text-align: center"> Forms containerComponent and Form StatelessComponent  </h3>
         
       </div>
     </div>
     
-    <app-passenger-dashboard></app-passenger-dashboard>
+    <app-passenger-viewer></app-passenger-viewer>
+    
+    <!--<app-passenger-dashboard></app-passenger-dashboard>-->
     
   `
 })

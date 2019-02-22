@@ -222,3 +222,14 @@ Curso de angular: do basico ao avançado.
 - criado o errorHandling, vamos duplicar o servico que lista passengers para testar
 - vamos chamar o servico duplicado no smartComponent
 - Nosso exemplos, vimos que podemos tratar o erro em cada chamada, ou criar um ErrorHandler para tratar todos em um unico lugar
+
+
+### branch: 24-Forms-containerComponent
+- Vamos aprender a trabalhar com formularios agora
+- Para isso, precisamos criar um novo SmartComponent (container) que sera o passenger-viewer, ver passos:
+  - 1: criar mais uma pasta dentro de containers com o nome acima
+  - 2: criar o novo modulo seguindo o mesmo nome e registra-lo no passenger modulo, igual ao anterior (passenger-dashboard)
+  - 3: criar o css para o mesmo
+- Vamos criar um childComponent chamado passenger-form (registrar no modulo)
+- Como vamos trabalhar com formularios, no modulo passenger temos que importar o FormsModule igual o HttpClientModule
+- lembrando que essa branch nao tem nada de novo, ela serve de base para as proximas branches.
