@@ -248,3 +248,7 @@ Curso de angular: do basico ao avançado.
 - denovo, toda propriedade name sera adicionada ao templateRef criado (form)
 - se existe ngModel na tag, obrigatoriamente vc tem que adicionar a prop name
 - o ngModelChange atualiza o objeto passenger pra gente
+
+
+### branch 267-checkboxes
+- 

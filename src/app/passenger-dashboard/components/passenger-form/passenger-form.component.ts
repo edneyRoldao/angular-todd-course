@@ -67,6 +67,16 @@ import { Passenger } from '../../models/passenger.interface';
           </div>
         </div>
         
+        <!-- working with checkboxes -->
+        <div class="form-check" style="margin-top: 20px">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1"> Default checkbox </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+          <label class="form-check-label" for="defaultCheck2"> Disabled checkbox </label>
+        </div>
+        
         <hr>
         {{ form.value | json }}
       </form>
