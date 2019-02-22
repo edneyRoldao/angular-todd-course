@@ -250,5 +250,5 @@ Curso de angular: do basico ao avançado.
 - o ngModelChange atualiza o objeto passenger pra gente
 
 
-### branch 267-checkboxes
-- 
+### branch 27-checkboxes
+- funciona da mesma forma que radio buttons, so nao tem o property binding em value
