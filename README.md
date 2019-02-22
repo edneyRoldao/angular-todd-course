@@ -240,9 +240,11 @@ Curso de angular: do basico ao avançado.
 - os props ngModel e name andam juntos
 - prestar atencao nas diversas variacoes do ngModel e name
 - vamos que estamos usando o pipe json no templateRef form e no objeto passenger para efeito de debugging 
+  
+
+### branch: 26-radioButtons-ngModelChange
 - nos radios button criados, estamos udando event bind chamado ngModelChange onde sera invocado um toggle,
   quando true, vamos setar o checkInDate
 - denovo, toda propriedade name sera adicionada ao templateRef criado (form)
 - se existe ngModel na tag, obrigatoriamente vc tem que adicionar a prop name
 - o ngModelChange atualiza o objeto passenger pra gente
-  

@@ -30,6 +30,42 @@ import { Passenger } from '../../models/passenger.interface';
                    [ngModel]="passengerForm?.fullName"> <!-- usar safeNavigation para evitar possiveis erros, ja que tudo é assincrono -->
           </div>
         </div>
+
+        <!-- primeiro radio -->
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="radio"
+                 name="checkedIn"
+                 id="rd1"
+                 [value]="true"
+                 [ngModel]="passengerForm?.checkedIn"
+                 (ngModelChange)="toggleCheckIn($event)">
+          <label class="form-check-label" for="rd1"> YES </label>
+        </div>
+
+        <!-- segundo radio -->
+        <div class="form-check">
+          <input class="form-check-input"
+                 type="radio"
+                 name="checkedIn"
+                 id="rd2"
+                 [value]="false"
+                 [ngModel]="passengerForm?.checkedIn"
+                 (ngModelChange)="toggleCheckIn($event)">
+          <label class="form-check-label" for="rd2"> NO </label>
+        </div>
+
+        <!-- checkInDate input -->
+        <div *ngIf="form.value.checkedIn" class="form-group row" style="margin-top: 10px">
+          <label class="col-form-label" for="checkInDate">Check-in date</label>
+          <div class="col-sm-5">
+            <input class="form-control"
+                   id="checkInDate"
+                   type="number"
+                   name="checkInDate"
+                   [ngModel]="passengerForm?.checkInDate">
+          </div>
+        </div>
         
         <hr>
         {{ form.value | json }}
@@ -41,5 +77,12 @@ export class PassengerFormComponent {
 
   @Input()
   passengerForm: Passenger;
+
+  toggleCheckIn(event: boolean) {
+    if (event) {
+      console.log('asdfsdfasdfasdfasdfasdfasdfasd');
+      this.passengerForm.checkInDate = Date.now(); // time now as ms
+    }
+  }
 
 }
