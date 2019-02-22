@@ -233,3 +233,16 @@ Curso de angular: do basico ao avançado.
 - Vamos criar um childComponent chamado passenger-form (registrar no modulo)
 - Como vamos trabalhar com formularios, no modulo passenger temos que importar o FormsModule igual o HttpClientModule
 - lembrando que essa branch nao tem nada de novo, ela serve de base para as proximas branches.
+
+
+### branch: 25-ngForm-and-ngModel
+- Ver html do passenger-form, na tab form
+- os props ngModel e name andam juntos
+- prestar atencao nas diversas variacoes do ngModel e name
+- vamos que estamos usando o pipe json no templateRef form e no objeto passenger para efeito de debugging 
+- nos radios button criados, estamos udando event bind chamado ngModelChange onde sera invocado um toggle,
+  quando true, vamos setar o checkInDate
+- denovo, toda propriedade name sera adicionada ao templateRef criado (form)
+- se existe ngModel na tag, obrigatoriamente vc tem que adicionar a prop name
+- o ngModelChange atualiza o objeto passenger pra gente
+  
