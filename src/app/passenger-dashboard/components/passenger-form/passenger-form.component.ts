@@ -31,30 +31,17 @@ import { Passenger } from '../../models/passenger.interface';
           </div>
         </div>
 
-        <!-- primeiro radio -->
-        <div class="form-check">
+        <!-- working with checkboxes -->
+        <div class="form-check" style="margin-top: 20px">
           <input class="form-check-input"
-                 type="radio"
-                 name="checkedIn"
-                 id="rd1"
-                 [value]="true"
+                 type="checkbox" 
+                 name="checkedIn" 
                  [ngModel]="passengerForm?.checkedIn"
-                 (ngModelChange)="toggleCheckIn($event)">
-          <label class="form-check-label" for="rd1"> YES </label>
+                 (ngModelChange)="toggleCheckIn($event)"
+                 id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1"> Default checkbox </label>
         </div>
-
-        <!-- segundo radio -->
-        <div class="form-check">
-          <input class="form-check-input"
-                 type="radio"
-                 name="checkedIn"
-                 id="rd2"
-                 [value]="false"
-                 [ngModel]="passengerForm?.checkedIn"
-                 (ngModelChange)="toggleCheckIn($event)">
-          <label class="form-check-label" for="rd2"> NO </label>
-        </div>
-
+        
         <!-- checkInDate input -->
         <div *ngIf="form.value.checkedIn" class="form-group row" style="margin-top: 10px">
           <label class="col-form-label" for="checkInDate">Check-in date</label>
@@ -65,16 +52,6 @@ import { Passenger } from '../../models/passenger.interface';
                    name="checkInDate"
                    [ngModel]="passengerForm?.checkInDate">
           </div>
-        </div>
-        
-        <!-- working with checkboxes -->
-        <div class="form-check" style="margin-top: 20px">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-          <label class="form-check-label" for="defaultCheck1"> Default checkbox </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
-          <label class="form-check-label" for="defaultCheck2"> Disabled checkbox </label>
         </div>
         
         <hr>
