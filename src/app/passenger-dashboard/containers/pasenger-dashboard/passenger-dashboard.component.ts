@@ -32,15 +32,30 @@ import { PassengerDashboardService } from '../../services/passenger-dashboard.se
 export class PassengerDashboardComponent implements OnInit {
   passengers: Passenger[];
 
-  // temos aqui a injecao do nosso servico pelo angular
-  // por baixo dos panos e criado uma variavel membro e por meio do this, ele recebe o servico injeto no construtor
   constructor(private passengerService: PassengerDashboardService) {
   }
 
   ngOnInit() {
-    this.passengerService.getPassengers().subscribe((data: Passenger[]) => {
-      this.passengers = data;
-    });
+    this.passengerService.getPassengers().subscribe(
+
+        // when success
+      (data: Passenger[]) => this.passengers = data,
+
+      // when error (olhar no console do browser)
+      (error) => console.log('LOG DO ERRO: ', error)
+
+    );
+
+    this.passengerService.getPassengers2().subscribe(
+
+        // when success
+      (data: Passenger[]) => this.passengers = data,
+
+      // when error (olhar no console do browser)
+      (error) => console.log('LOG DO ERRO - ErrorHandling: ', error)
+
+    );
+
   }
 
   handleRemove(event: Passenger) {
@@ -57,13 +72,7 @@ export class PassengerDashboardComponent implements OnInit {
 
       this.passengers = this.passengers.map(passenger => {
         if (passenger.id === event.id) {
-
-          // first arg: to make sure you are getting a copy with another reference
-          // second arg: the previous object
-          // third arg: the new object
-          // note: the first and second will be merged.
           passenger = Object.assign({}, passenger, event);
-
         }
 
         return passenger;

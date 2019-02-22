@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
+import {Observable, throwError} from 'rxjs';
 
 import { Passenger } from '../models/passenger.interface';
+import {catchError, retry} from 'rxjs/internal/operators';
 
 const API_URL_BASE = 'http://localhost:3000/passengers';
 
@@ -13,7 +14,19 @@ export class PassengerDashboardService {
 
   // listando passengers
   getPassengers(): Observable<Passenger[]> {
-    return this.http.get<Passenger[]>(API_URL_BASE);
+    const urlQueNaoExiste = API_URL_BASE + '/naoExiste';
+    return this.http.get<Passenger[]>(urlQueNaoExiste);
+  }
+
+  // testando errorHandling
+  getPassengers2(): Observable<Passenger[]> {
+    const urlQueNaoExiste = API_URL_BASE + '/naoExiste';
+    return this.http.get<Passenger[]>(urlQueNaoExiste)
+      .pipe(
+        // podemos definir numero de tentativas antes do erro ser lancado com retry
+        retry(2),
+        catchError(this.errorHandling)
+      );;
   }
 
   // obtendo Passenger pelo id.
@@ -42,6 +55,20 @@ export class PassengerDashboardService {
 
   deletePassenger(passengerId: number): Observable<Passenger> {
     return this.http.delete<Passenger>(`${API_URL_BASE}/${passengerId}`);
+  }
+
+  private errorHandling(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      // a client-side error occurred
+      console.log('An error from client-side occurred: ', error.error.message);
+
+    } else {
+      console.log(`An error from service backend occurred and the status code was is ${error.status}, and 
+      the body was: ${error.error}`);
+
+    }
+
+    return throwError('something bad happened, try again later');
   }
 
 }

@@ -211,3 +211,14 @@ Curso de angular: do basico ao avançado.
 - Vamos aprender a passar headers e queryString parametros
 - Nos exemplos faremos um refactoring no servico de updatePassenger
 
+
+### branch: 23-error-handling
+- vamos criar nosso errorHandling dentro do servico e tratar no component.
+- Passo a Passo do primeiro exemplo:
+  - vamos fazer algo simples sem o uso de um errorHandling
+  - no servico, vamos alterar a url que busca a lista para uma que nao existe
+  - no smartComponent vamos capturar o erro que e o segundo parametro de subscribe.
+- No segundo exemplo, vamos criar um errorHandling para o servico que deleta um passenger
+- criado o errorHandling, vamos duplicar o servico que lista passengers para testar
+- vamos chamar o servico duplicado no smartComponent
+- Nosso exemplos, vimos que podemos tratar o erro em cada chamada, ou criar um ErrorHandler para tratar todos em um unico lugar
