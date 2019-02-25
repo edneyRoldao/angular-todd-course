@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Passenger } from '../../models/passenger.interface';
-import {Baggage} from '../../models/baggage.interface';
+import { Baggage } from '../../models/baggage.interface';
 
 @Component({
   selector: 'app-passenger-form',
@@ -9,7 +9,9 @@ import {Baggage} from '../../models/baggage.interface';
     <div class="container">
       {{ passengerForm | json }}
       <hr>
-      <form #form="ngForm" novalidate>
+      <form #form="ngForm" 
+            novalidate 
+            (ngSubmit)="handleSubmit(form.value, form.valid)">
         
         <!-- name input -->
         <div class="form-group row">
@@ -18,15 +20,15 @@ import {Baggage} from '../../models/baggage.interface';
             <input type="text"
                    class="form-control"
                    id="passengerName"
-                   name="fullname"
+                   name="fullName"
                    required
-                   #fullname="ngModel"
+                   #fullName="ngModel"
                    [ngModel]="passengerForm?.fullName">
 
-            {{ fullname.errors | json }}
+            {{ fullName.errors | json }}
           </div>
           
-          <div class="alert alert-danger" *ngIf="fullname.errors?.required">
+          <div class="alert alert-danger" *ngIf="fullName.errors?.required">
             The name is required
           </div>
           
@@ -95,6 +97,9 @@ export class PassengerFormComponent {
   @Input()
   passengerForm: Passenger;
 
+  @Output()
+  passengerUpdated: EventEmitter<Passenger> = new EventEmitter();
+
   baggage: Baggage[] = [
     {key: 'none', value: 'no baggage'},
     {key: 'hand-only', value: 'hand baggage'},
@@ -105,6 +110,12 @@ export class PassengerFormComponent {
   toggleCheckIn(event: boolean) {
     if (event) {
       this.passengerForm.checkInDate = Date.now(); // time now as ms
+    }
+  }
+
+  handleSubmit(passenger: Passenger, valid: boolean) {
+    if (valid) {
+      this.passengerUpdated.emit(passenger);
     }
   }
 

@@ -267,3 +267,10 @@ Curso de angular: do basico ao avançado.
 - ver passenger-form no html
 - temos os props dirty e touched
 - vamos adicionar um botao de submit e desabilita-lo quando o formulario estiver invalido.
+
+
+### 30-ngSubmit-statelessComponent-output
+- vamos entender o motivo da existencia dos SmartComponents
+- veja que o componente passenger-form e um childComponent e por isso, ele e stateless. Isso significa que ele
+  nao pode ter o contato direto com o servico que vai persistir a atualizacao do passenger.
+- vamos utilizar o decorator @Output para passar as alteracoes para o parentComponent e este vai chamar o servico de atualizacao

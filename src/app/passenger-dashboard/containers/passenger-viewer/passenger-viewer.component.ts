@@ -10,7 +10,8 @@ import {Passenger} from '../../models/passenger.interface';
     <div>
       <div class="container">
         
-        <app-passenger-form [passengerForm]="passenger">
+        <app-passenger-form [passengerForm]="passenger" 
+                            (passengerUpdated)="onUpdatePassenger($event)">
         </app-passenger-form>
         
       </div>
@@ -26,6 +27,12 @@ export class PassengerViewerComponent implements OnInit {
   ngOnInit() {
     this.passengerService.getPassenger(1).subscribe((data: Passenger) => {
       this.passenger = data;
+    });
+  }
+
+  onUpdatePassenger(event: Passenger) {
+    this.passenger = Object.assign({}, this.passenger, event);
+    this.passengerService.updatePassenger(this.passenger).subscribe((data: Passenger) => {
     });
   }
 
