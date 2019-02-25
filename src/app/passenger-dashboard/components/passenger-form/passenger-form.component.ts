@@ -19,8 +19,17 @@ import {Baggage} from '../../models/baggage.interface';
                    class="form-control"
                    id="passengerName"
                    name="fullname"
-                   [ngModel]="passengerForm?.fullName"> <!-- usar safeNavigation para evitar possiveis erros, ja que tudo é assincrono -->
+                   required
+                   #fullname="ngModel"
+                   [ngModel]="passengerForm?.fullName">
+
+            {{ fullname.errors | json }}
           </div>
+          
+          <div class="alert alert-danger" *ngIf="fullname.errors?.required">
+            The name is required
+          </div>
+          
         </div>
 
         <!-- working with checkboxes -->
@@ -47,7 +56,6 @@ import {Baggage} from '../../models/baggage.interface';
         </div>
         
         <hr>
-        <!-- primeiro exemplo de selectBox sem ngValue -->
         <div class="col-6">
           <select class="custom-select" 
                   name="baggage"
@@ -62,23 +70,22 @@ import {Baggage} from '../../models/baggage.interface';
           </select>
         </div>
         
-        <hr>
-        <!-- segundo exemplo de selectBox com ngValue -->
-        <div class="col-6">
-          <select class="custom-select" 
-                  name="baggage"
-                  [ngModel]="passengerForm?.baggage">
-            
-            <option *ngFor="let bag of baggage"
-                    [ngValue]="bag.key">
-              
-              {{ bag.value }}
-            </option>
-          </select>
+        <div class="col-3" style="margin-top: 20px">
+          <button type="submit" 
+                  class="btn btn-dark" 
+                  [disabled]="form.invalid">
+            UPDATE
+          </button>
         </div>
         
         <hr>
         {{ form.value | json }}
+        
+        <hr>
+        {{ 'valid: ' + form.valid | json }}
+        
+        <hr>
+        {{ 'invalid: ' + form.invalid | json }}
       </form>
     </div>    
   `

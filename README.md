@@ -259,3 +259,11 @@ Curso de angular: do basico ao avançado.
 - quando utilizamos um ngValue, as coisas sao mais implicitas e nao ajuda o dev a saber o que esta acontecendo.
 - utilizamos a chamada de outro servico que busca o passenger pelo id, pois foi add um novo atributo e nova interface (baggage)
 - foi criado um novo array para ser utilizado no select dentro do options
+
+
+### branch 29-form-validation
+- adicione um templateRef no input de nome passando ngModel (estamos passando a referencia para o ngModel)
+- add required ao input
+- ver passenger-form no html
+- temos os props dirty e touched
+- vamos adicionar um botao de submit e desabilita-lo quando o formulario estiver invalido.
