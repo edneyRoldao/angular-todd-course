@@ -16,9 +16,10 @@ export class PassengerDashboardService {
     return this.http.get<Passenger[]>(API_URL_BASE);
   }
 
-  // obtendo Passenger pelo id.
+  // obtendo Passenger pelo id. (apenas para o teste do select box) branch 28-...
   getPassenger(passengerId: number): Observable<Passenger> {
-    return this.http.get<Passenger>(`${API_URL_BASE}/${passengerId}`);
+    const url = 'http://localhost:3000/passengers2';
+    return this.http.get<Passenger>(`${url}/${passengerId}`);
   }
 
   // Adicionando headers ao request

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
     <div class="container" style="margin-top: 10px; margin-bottom: 30px">
       <div class="jumbotron">
 
-        <h3 style="text-align: center"> Trabalhando Checkboxes  </h3>
+        <h3 style="text-align: center"> Working with Select, Option rendering, and ngValue  </h3>
         
       </div>
     </div>

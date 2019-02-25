@@ -1,19 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Passenger } from '../../models/passenger.interface';
+import {Baggage} from '../../models/baggage.interface';
 
 @Component({
   selector: 'app-passenger-form',
   styleUrls: ['passenger-form.component.css'],
   template: `
-
-    <!-- #form="ngForm": os dados do formulario serao guardados aqui    -->
-    <!--     novalidate: e utilizar para o formulario nao ser validade  -->
-    
-    <!-- variacoes ngModel:
-          1 -  ngModel                            -> dentro do templateRef form sera adicionada uma prop com o mesmo nome definido em name
-          2 - [ngMolde]="passengerForm.fullname"  -> faz binding com o objeto passengerForm via oneWayDataFlow mais tudo do passo anterior
-     -->
-    
     <div class="container">
       {{ passengerForm | json }}
       <hr>
@@ -55,6 +47,37 @@ import { Passenger } from '../../models/passenger.interface';
         </div>
         
         <hr>
+        <!-- primeiro exemplo de selectBox sem ngValue -->
+        <div class="col-6">
+          <select class="custom-select" 
+                  name="baggage"
+                  [ngModel]="passengerForm?.baggage">
+            
+            <option *ngFor="let bag of baggage"
+                    [selected]="bag.key === passengerForm?.baggage"
+                    [value]="bag.key">
+              
+              {{ bag.value }}
+            </option>
+          </select>
+        </div>
+        
+        <hr>
+        <!-- segundo exemplo de selectBox com ngValue -->
+        <div class="col-6">
+          <select class="custom-select" 
+                  name="baggage"
+                  [ngModel]="passengerForm?.baggage">
+            
+            <option *ngFor="let bag of baggage"
+                    [ngValue]="bag.key">
+              
+              {{ bag.value }}
+            </option>
+          </select>
+        </div>
+        
+        <hr>
         {{ form.value | json }}
       </form>
     </div>    
@@ -65,9 +88,15 @@ export class PassengerFormComponent {
   @Input()
   passengerForm: Passenger;
 
+  baggage: Baggage[] = [
+    {key: 'none', value: 'no baggage'},
+    {key: 'hand-only', value: 'hand baggage'},
+    {key: 'hold-only', value: 'hold baggage'},
+    {key: 'hand-hold', value: 'hand and hold baggage'},
+  ];
+
   toggleCheckIn(event: boolean) {
     if (event) {
-      console.log('asdfsdfasdfasdfasdfasdfasdfasd');
       this.passengerForm.checkInDate = Date.now(); // time now as ms
     }
   }
