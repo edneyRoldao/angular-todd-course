@@ -1,1 +1,4 @@
 /* add default styles */
+.active {
+  background: black;
+}

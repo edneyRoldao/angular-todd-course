@@ -289,3 +289,10 @@ Curso de angular: do basico ao avançado.
 - vamos criar um componente para exibir uma pagina de erro 404 quando uma rota nao existir
 - quando utilizamos ** no valor do atributo path do array routes em app.module, significa toda rota que nao existir vai bater la
 - depois registramos o componente no app.module
+
+
+### 33-routerLink-stylingActiveRoutes
+- ver exemplo de routerLink no html do component notFound
+- vamos criar uma class em css chamada active para os exemplos em app.component.css
+- ver exemplo de como aplicar a class active dinamicamente via routerLinkActive
+- muito util para aplicacao de estilo no link atual

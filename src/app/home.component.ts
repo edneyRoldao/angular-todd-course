@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
         <div class="container" style="margin-top: 10px; margin-bottom: 30px">
           <div class="jumbotron">
 
-            <h3 style="text-align: center"> RouterModule, Base href, routes and outlet  </h3>
+            <h3 style="text-align: center"> RouterLink, routerLinkActive and routerLinkActiveOptions  </h3>
 
           </div>
         </div>

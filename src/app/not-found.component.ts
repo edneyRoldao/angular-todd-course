@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
     <div class="container">
       <div class="jumbotron">
         <h1 style="text-align: center; font-weight: bold"> Ops... Page not found - 404 </h1>
+        
+        <a routerLink="/">Go Home</a>
 
         <div class="container" style="margin-top: 10px; margin-bottom: 30px">
           <div class="jumbotron">
