@@ -296,3 +296,8 @@ Curso de angular: do basico ao avançado.
 - vamos criar uma class em css chamada active para os exemplos em app.component.css
 - ver exemplo de como aplicar a class active dinamicamente via routerLinkActive
 - muito util para aplicacao de estilo no link atual
+
+### 34-dynamicNavigation-with-ngFor
+- podemos iterar um array para montar nossos links de forma dinamica
+- precisamos criar o array no componente de axemplo que e app.component
+- vamos criar a interface Nav para os dados de navegacao
