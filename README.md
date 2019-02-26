@@ -283,3 +283,9 @@ Curso de angular: do basico ao avançado.
 - no array de imports do ngModule decorator, vamos adionar o routerModule chamando a funcao forRoot e passar o routes array como param
 - vamos criar o componente home para a pagina inicial
 - dentro do html do app.component, vamos trocar a tab html por router-outlet
+
+
+### 32-wildcard-routes-404Handling
+- vamos criar um componente para exibir uma pagina de erro 404 quando uma rota nao existir
+- quando utilizamos ** no valor do atributo path do array routes em app.module, significa toda rota que nao existir vai bater la
+- depois registramos o componente no app.module
