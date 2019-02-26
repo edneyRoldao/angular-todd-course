@@ -301,3 +301,11 @@ Curso de angular: do basico ao avançado.
 - podemos iterar um array para montar nossos links de forma dinamica
 - precisamos criar o array no componente de axemplo que e app.component
 - vamos criar a interface Nav para os dados de navegacao
+
+### 35-feature-module-routes-with-forChild
+- vamos aprender a criar link para os componentes criados ate agora
+- percebe que a hierarquia dos componentes e importante aqui
+- como vamos criar os links do modulo passenger-dashboard, entao o RouterModule de ser registrado la tambem assim como no app.module
+- diferente do app.module, a funcao nao sera mais forRoot e sim forChild ondes vamos passar um array de routes tambem
+- como estamos usando routes, nao sera mais necessario colocar o passengerDashboardComponent dentro do array exports
+- vamos adicionar o link no array nav app.component

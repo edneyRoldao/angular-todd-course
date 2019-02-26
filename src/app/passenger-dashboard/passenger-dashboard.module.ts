@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 // container components (smart)
 import { PassengerDashboardComponent } from './containers/passenger-dashboard/passenger-dashboard.component';
@@ -15,6 +16,10 @@ import { PassengerFormComponent } from './components/passenger-form/passenger-fo
 // services
 import { PassengerDashboardService } from './services/passenger-dashboard.service';
 
+const routes: Routes = [
+  { path: 'passengers', component: PassengerDashboardComponent }
+];
+
 @NgModule({
   declarations: [
     PassengerDashboardComponent,
@@ -26,10 +31,11 @@ import { PassengerDashboardService } from './services/passenger-dashboard.servic
   imports: [
     CommonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forChild(routes)
   ],
   exports: [
-    PassengerDashboardComponent,
+    // PassengerDashboardComponent, como ele esta no array de routes, ele nao e mais necessario aqui
     PassengerViewerComponent
   ],
   providers: [
