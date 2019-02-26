@@ -274,3 +274,12 @@ Curso de angular: do basico ao avançado.
 - veja que o componente passenger-form e um childComponent e por isso, ele e stateless. Isso significa que ele
   nao pode ter o contato direto com o servico que vai persistir a atualizacao do passenger.
 - vamos utilizar o decorator @Output para passar as alteracoes para o parentComponent e este vai chamar o servico de atualizacao
+
+
+### 31-href-routerModule
+- Para o processo de rotas funcionar, e obrigatorio ter a linha 6 do nosso index.html ( <base href="/"> )
+- Dentro de app.module precisamos importar o RouterModule
+- precisamos criar um array routes
+- no array de imports do ngModule decorator, vamos adionar o routerModule chamando a funcao forRoot e passar o routes array como param
+- vamos criar o componente home para a pagina inicial
+- dentro do html do app.component, vamos trocar a tab html por router-outlet

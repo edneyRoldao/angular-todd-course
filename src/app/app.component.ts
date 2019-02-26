@@ -4,18 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   styleUrls: ['./app.component.css'],
   template: `
-    <div class="container" style="margin-top: 10px; margin-bottom: 30px">
-      <div class="jumbotron">
-
-        <h3 style="text-align: center"> ngSubmit - Stateless components - @Output()  </h3>
-        
-      </div>
+    <div style="margin-top: 10px">
+      <router-outlet></router-outlet>
     </div>
-    
-    <app-passenger-viewer></app-passenger-viewer>
-    
-    <!--<app-passenger-dashboard></app-passenger-dashboard>-->
-    
   `
 })
 export class AppComponent { }
