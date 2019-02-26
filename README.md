@@ -309,3 +309,9 @@ Curso de angular: do basico ao avançado.
 - diferente do app.module, a funcao nao sera mais forRoot e sim forChild ondes vamos passar um array de routes tambem
 - como estamos usando routes, nao sera mais necessario colocar o passengerDashboardComponent dentro do array exports
 - vamos adicionar o link no array nav app.component
+
+
+### 36-child-and-dynamicRoutes
+- vamos criar as rotas baseando-se em pathParam, ver passenger module
+- ate agora a chamada do servico que buscar passenger por id estava com numero estatico. Vamos mudar isso em passengerViewerComponent (linhas 27 e 31)
+- 

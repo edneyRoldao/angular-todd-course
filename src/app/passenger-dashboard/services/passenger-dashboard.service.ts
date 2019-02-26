@@ -17,7 +17,7 @@ export class PassengerDashboardService {
   }
 
   // obtendo Passenger pelo id. (apenas para o teste do select box) branch 28-...
-  getPassenger(passengerId: number): Observable<Passenger> {
+  getPassenger(passengerId: any): Observable<Passenger> {
     return this.http.get<Passenger>(`${API_URL_BASE}/${passengerId}`);
   }
 

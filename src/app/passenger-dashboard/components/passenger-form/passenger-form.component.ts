@@ -7,7 +7,6 @@ import { Baggage } from '../../models/baggage.interface';
   styleUrls: ['passenger-form.component.css'],
   template: `
     <div class="container">
-      {{ passengerForm | json }}
       <hr>
       <form #form="ngForm" 
             novalidate 
@@ -24,8 +23,6 @@ import { Baggage } from '../../models/baggage.interface';
                    required
                    #fullName="ngModel"
                    [ngModel]="passengerForm?.fullName">
-
-            {{ fullName.errors | json }}
           </div>
           
           <div class="alert alert-danger" *ngIf="fullName.errors?.required">
@@ -79,15 +76,6 @@ import { Baggage } from '../../models/baggage.interface';
             UPDATE
           </button>
         </div>
-        
-        <hr>
-        {{ form.value | json }}
-        
-        <hr>
-        {{ 'valid: ' + form.valid | json }}
-        
-        <hr>
-        {{ 'invalid: ' + form.invalid | json }}
       </form>
     </div>    
   `
@@ -109,7 +97,7 @@ export class PassengerFormComponent {
 
   toggleCheckIn(event: boolean) {
     if (event) {
-      this.passengerForm.checkInDate = Date.now(); // time now as ms
+      this.passengerForm.checkInDate = Date.now();
     }
   }
 
