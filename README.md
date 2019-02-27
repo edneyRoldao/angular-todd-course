@@ -314,4 +314,16 @@ Curso de angular: do basico ao avançado.
 ### 36-child-and-dynamicRoutes
 - vamos criar as rotas baseando-se em pathParam, ver passenger module
 - ate agora a chamada do servico que buscar passenger por id estava com numero estatico. Vamos mudar isso em passengerViewerComponent (linhas 27 e 31)
-- 
+
+### 37-imperativeRouting-HashLocationStrategy-Redirects
+- vamos aprender chamar uma rota passando param pelo routerLink.
+- na nossa lista de passengers (passengerDetailComponent) vamos add um link para passengerViewer
+- passo a passo para criar link com router:
+  - 1: injetar o servico de Router em passengerViewer
+  - 2: criar (ver funcao goBack em passenger-viewer)
+  - 3: no html adicionar um botao com eventBind no click e passar a funcao criada acima
+- em passenger detail vamos seguir o mesmo exemplo para levar o passenger desejado para passenger-viewer (formulario)
+- como passenger-detail e stateless, devemos passar o objeto via output (eventEmitter) para o smartComponent (passenger-dashboard)
+- no componente pai devemos receber esse eventEmitter acima e passar para uma funcao do pai
+- atencao na funcao handleView
+- para ver exemplo de redirect, ver linha 14 do app.module

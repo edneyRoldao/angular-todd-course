@@ -20,7 +20,7 @@ import {Passenger} from '../../models/passenger.interface';
                  #name>
         </div>
         
-        <div class="col-4" *ngIf="!editing">
+        <div class="col-3" *ngIf="!editing">
           {{ passengerDetail.fullName }}
         </div>
         
@@ -30,9 +30,15 @@ import {Passenger} from '../../models/passenger.interface';
           </button>
         </div>
         
-        <div class="col-3">
+        <div class="col-2">
           <button class="btn btn-danger" (click)="onRemove()">
             Remove
+          </button>
+        </div>
+        
+        <div class="col-2">
+          <button class="btn btn-danger" (click)="goToPassenger()">
+            View
           </button>
         </div>
         
@@ -48,10 +54,13 @@ export class PassengerDetailComponent implements OnChanges {
   passengerDetail: Passenger;
 
   @Output()
-  edit: EventEmitter<any> = new EventEmitter();
+  edit: EventEmitter<Passenger> = new EventEmitter();
 
   @Output()
-  remove: EventEmitter<any> = new EventEmitter();
+  remove: EventEmitter<Passenger> = new EventEmitter();
+
+  @Output()
+  view: EventEmitter<Passenger> = new EventEmitter();
 
   onNameChange(value: string) {
     this.passengerDetail.fullName = value;
@@ -67,6 +76,10 @@ export class PassengerDetailComponent implements OnChanges {
     }
 
     this.editing = !this.editing;
+  }
+
+  goToPassenger() {
+    this.view.emit( this.passengerDetail );
   }
 
   ngOnChanges(changes) {

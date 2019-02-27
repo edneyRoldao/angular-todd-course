@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Passenger } from '../../models/passenger.interface';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { PassengerDashboardService } from '../../services/passenger-dashboard.service';
+import { Passenger } from '../../models/passenger.interface';
 
 @Component({
   selector: 'app-passenger-viewer',
@@ -11,7 +11,9 @@ import { PassengerDashboardService } from '../../services/passenger-dashboard.se
     
     <div>
       <div class="container">
-        
+        <div>
+          <div class="btn btn-block badge-info" (click)="goBack()">Go Back</div>
+        </div>
         <app-passenger-form [passengerForm]="passenger" 
                             (passengerUpdated)="onUpdatePassenger($event)">
         </app-passenger-form>
@@ -24,10 +26,9 @@ import { PassengerDashboardService } from '../../services/passenger-dashboard.se
 export class PassengerViewerComponent implements OnInit {
   passenger: Passenger;
 
-  constructor(private passengerService: PassengerDashboardService, private route: ActivatedRoute) {}
+  constructor(private passengerService: PassengerDashboardService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    // obtendo o id da rota
     const id = this.route.snapshot.paramMap.get('id');
     this.passengerService.getPassenger(id).subscribe((data: Passenger) => this.passenger = data);
   }
@@ -35,6 +36,10 @@ export class PassengerViewerComponent implements OnInit {
   onUpdatePassenger(event: Passenger) {
     this.passenger = Object.assign({}, this.passenger, event);
     this.passengerService.updatePassenger(this.passenger).subscribe((data: Passenger) => console.log(data));
+  }
+
+  goBack() {
+    this.router.navigate(['/passengers']);
   }
 
 }

@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
         <div class="container" style="margin-top: 10px; margin-bottom: 30px">
           <div class="jumbotron">
 
-            <h3 style="text-align: center"> Child, Dynamic Routes, Route params, data-fetching </h3>
+            <h3 style="text-align: center"> Imperative routing API, Hash location strategy and Applying redirects  </h3>
 
           </div>
         </div>
